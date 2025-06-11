@@ -1,11 +1,12 @@
 import { useState } from "react";
+import Image from "./Image";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
   return (
     <div className="w-full h-16 md:h-20 flex items-center justify-between">
       <div className="font-bold text-2xl flex gap-5">
-        <img className="w-8 h-8" src="/logo.png" alt="" />
+        <Image w={32} h={32} src="/logo.png" alt="logo" />
         <span>Blogging</span>
       </div>
       <div className="md:hidden">
@@ -16,7 +17,7 @@ export default function Navbar() {
           {open ? "X" : "="}
         </div>
         <div
-          className={`w-full gap-12 text-2xl font-medium absolute top-16 h-full flex flex-col justify-center items-center bg-amber-200 transition-all ease-in-out duration-600 ${
+          className={`w-full gap-12 text-2xl font-medium absolute top-16 h-full flex flex-col justify-center items-center transition-all ease-in-out duration-600 ${
             open ? "-right-0" : "-right-[100%]"
           }`}
         >
