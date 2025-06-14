@@ -5,8 +5,10 @@ import webHookRouter from "./routes/webhook.route.js";
 import commentRouter from "./routes/comment.route.js";
 import postRouter from "./routes/post.route.js";
 import connectDB from "./lib/connectDB.js";
+import {clerkMiddleware} from "@clerk/express"
 
 const app = express();
+app.use(clerkMiddleware())
 app.use("/webhooks", webHookRouter);
 app.use(express.json());
 
